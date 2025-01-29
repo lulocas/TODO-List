@@ -1,16 +1,18 @@
 package Entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Tarefa {
+
     private String nome;
     private String descricao;
-    private Date data;
+    private String data;
     private int prioridade;
     private String categoria;
-    private Status status;
+    private String status;
 
-    public Tarefa(String nome, String descricao, Date data, int prioridade, String categoria, Status status) {
+    public Tarefa(String nome, String descricao, String data, int prioridade, String categoria, String status) {
         this.nome = nome;
         this.descricao = descricao;
         this.data = data;
@@ -30,10 +32,10 @@ public class Tarefa {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public Date getData() {
+    public String getData() {
         return data;
     }
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
     public int getPrioridade() {
@@ -48,5 +50,19 @@ public class Tarefa {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
+    public String toString() {
+        return "Tarefa: " + nome
+        + "\nDescricao: " + descricao
+        + "\nData: " + data
+        + "\nPrioridade: " + prioridade
+        + "\nCategoria: " + categoria
+        + "\nStatus: " + status;
+    }
 }
