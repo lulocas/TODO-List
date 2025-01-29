@@ -1,8 +1,5 @@
 package Entities;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class Tarefa {
 
     private String nome;
@@ -19,6 +16,9 @@ public class Tarefa {
         this.prioridade = prioridade;
         this.categoria = categoria;
         this.status = status;
+    }
+    public Tarefa(){
+
     }
     public String getNome() {
         return nome;
