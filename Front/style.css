@@ -1,0 +1,193 @@
+body{
+    background-color: #fefeff;
+    font-family: Inter;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+header{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+h1{
+    display: flex;
+    font-size: 80px;
+    color: dodgerblue;
+    margin-top: 0;
+    margin-left: 12%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(254, 254, 255, 0.9);
+    position: fixed;
+}
+.caixa{
+    position: fixed;
+    width: 30%;
+    height: 55%;
+    background-color: dodgerblue;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    top: 25%;
+}
+.labels{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5%;
+    color:#fefeff;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-weight: bold;
+}
+input[type=text]{
+    background-color: rgb(254, 254, 255, 0.5);
+    border: none;
+    color: rgb(254, 254, 255, 0.5);
+    border-radius: 25px;
+    height: 30px;
+}
+#inputd{
+    height: 60px;
+    border-radius: 20px;
+}
+input[type=date]{
+    background-color: rgb(254, 254, 255, 0.5);
+    border: none;
+    color: rgb(254, 254, 255, 0.5);
+    border-radius: 25px;
+    height: 30px;
+}
+.selecionar{
+    display: flex;
+    flex-direction: column;
+    color:#fefeff;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-weight: bold;
+}
+.statuselect{
+    display: flex;
+    justify-content: center;
+    margin-top: 6%;
+    gap: 20px;
+}
+.botaoselect{
+    width: 100px;
+    height: 25px;
+    background-color: rgb(254, 254, 255, 0.5);
+    border: none;
+    border-radius: 25px;
+    color: #fefeff;
+    font-weight:bold;
+}
+#salvar{
+    margin-top: 5%;
+    width: 150px;
+    height: 25px;
+    margin-left: 37%;
+    background-color: rgb(254, 254, 255, 0.5);
+    border: none;
+    border-radius: 25px;
+    color: #fefeff;
+    font-weight:bold;
+}
+
+#botoes{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 25px;
+}
+#botaoadd{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+.botao{
+    background-color: dodgerblue;
+    width: 210px;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    font-size: 140%;
+    cursor: pointer;
+    color:#fefeff;
+}
+.botao:hover{
+    background-color: rgb(52, 134, 216);
+}
+#add{
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    margin-right: 21%;
+}
+#status{
+    margin-left: 12%;
+}
+
+#tarefas{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 3%;
+    margin-left: 12%;
+    flex-wrap: wrap;
+}
+.nota{
+    width: 20%;
+    height: 200px;
+    background-color: orange;
+    border-radius: 25px;
+    color: #fefeff;
+    flex-direction: row;
+    cursor: pointer;
+}
+.nota:hover{
+    background-color: rgb(219, 148, 15);
+}
+#test1{
+    background-color: tomato;
+}
+#test2{
+    background-color: mediumseagreen;
+}
+.nome{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 15px;;
+}
+.descricao{
+    margin-left: 20px;
+    color: rgb(254, 254, 255, 0.5);
+}
+.botoesnota{
+    display: flex;
+    margin-top: 17%;
+    justify-content: center;
+    gap: 10px;
+}
+.statusb{
+    width: 90px;
+    color: rgb(254, 254, 255, 0.5);
+    background-color: rgb(255, 165, 0, 0.5);
+    border: 1px solid rgb(254, 254, 255, 0.5);
+    border-radius: 25px;
+    cursor: pointer;
+}
+.statusb:hover{
+    background-color: rgb(219, 148, 15);
+}
