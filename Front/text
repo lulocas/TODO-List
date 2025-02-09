@@ -1,35 +1,56 @@
-<div class="container">
-                <div class="caixa" id="caixaadd">
-                    <div class="labels">
-                        <label for="nome">Nome: </label>
-                        <input type="text" name="nome" placeholder="nome...">
-                        <label for="descricao">Descrição: </label>
-                        <input id="inputd" type="text" name="descricao" placeholder="descrição...">
-                        <label for="categoria">Categoria: </label>
-                        <input type="text" name="categoria" placeholder="categoria...">
-                        <label for="data">Data de término: </label>
-                        <input type="date" name="data">
-                    </div>
-                   <div class="selecionar">
-                        <p>Nível de prioriade:</p>
-                        <div class="nivelprioridade">
-                            <input type="radio" id="nivel1" value="1" name="prioriade">
-                            <label for="nivel1">1</label>
-                            <input type="radio" id="nivel2" value="2" name="prioriade">
-                            <label for="nivel1">2</label>
-                            <input type="radio" id="nivel3" value="3" name="prioriade">
-                            <label for="nivel1">3</label>
-                            <input type="radio" id="nivel4" value="4" name="prioriade">
-                            <label for="nivel1">4</label>
-                            <input type="radio" id="nivel5" value="5" name="prioriade">
-                            <label for="nivel1">5</label>
-                        </div>
-                   </div>
-                   <div class="statuselect">
-                        <button class="botaoselect" id="selecttodo">To do</button>
-                        <button class="botaoselect" id="selectdoing">Doing</button>
-                        <button class="botaoselect" id="selectdone">Done</button>
-                   </div>
-                   <button id="salvar">Salvar</button>
-                </div>
-            </div>
+<div class="caixa" id="caixaadd">
+    <div id="botaoX">
+        <button id="sair">X</button>
+    </div>
+    <div class="labels">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" placeholder="nome...">
+        <label for="descricao">Descrição: </label>
+        <input id="inputd" type="text" name="descricao" placeholder="descrição...">
+        <label for="categoria">Categoria: </label>
+        <input type="text" name="categoria" placeholder="categoria...">
+        <label for="data">Data de término: </label>
+        <input type="date" name="data">
+    </div>
+   <div class="selecionar">
+        <p>Nível de prioriade:</p>
+        <div class="nivelprioridade">
+            <input type="radio" id="nivel1" value="1" name="prioriade">
+            <label for="nivel1">1</label>
+            <input type="radio" id="nivel2" value="2" name="prioriade">
+            <label for="nivel1">2</label>
+            <input type="radio" id="nivel3" value="3" name="prioriade">
+            <label for="nivel1">3</label>
+            <input type="radio" id="nivel4" value="4" name="prioriade">
+            <label for="nivel1">4</label>
+            <input type="radio" id="nivel5" value="5" name="prioriade">
+            <label for="nivel1">5</label>
+        </div>
+   </div>
+   <div class="statuselect">
+        <button class="botaoselect" value="1" name="status" id="selecttodo">To do</button>
+        <button class="botaoselect" value="2" name="status" id="selectdoing">Doing</button>
+        <button class="botaoselect" value="3" name="status" id="selectdone">Done</button>
+   </div>
+   <button id="salvar">Salvar</button>
+</div>
+</div>
+
+            var caixa = document.createElement('div');
+            caixa.classList.add("container");
+            document.getElementById("botoes").insertBefore(caixa);
+            var caixa2 = document.createElement('div');
+            caixa2.classList.add("caixa");
+            caixa.appendChild(caixa2);
+            var labels = document.createElement('div');
+            labels.classList.add("labels");
+            caixa2.appendChild(labels);
+            var selecionar = document.createElement('div');
+            selecionar.classList.add("selecionar");
+            caixa2.appendChild(selecionar);
+            var statuselect = document.createElement('div');
+            statuselect.classList.add("statuselect");
+            caixa2.appendChild(statuselect);
+            var salvar = document.createElement('button');
+            salvar.id="salvar";
+            caixa2.appendChild(salvar);            

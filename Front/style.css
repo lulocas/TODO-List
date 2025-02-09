@@ -32,21 +32,40 @@ h1{
     background-color: rgb(254, 254, 255, 0.9);
     position: fixed;
 }
+#botaoX{
+    display: flex;
+    justify-content: end;
+}
+#sair{
+    background-color: rgb(254, 254, 255, 0.5);
+    color:#fefeff;
+    border: none;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-top: 8px;
+    margin-right: 8px;
+    font-weight: bolder;
+}
+#sair:hover{
+    background-color: #fefeff;
+    color: dodgerblue;
+}
 .caixa{
     position: fixed;
     width: 30%;
-    height: 55%;
+    height: 60%;
     background-color: dodgerblue;
     display: flex;
     flex-direction: column;
     border-radius: 25px;
-    top: 25%;
+    top: 20%;
 }
 .labels{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 5%;
+    margin-top: 2%;
     color:#fefeff;
     margin-left: 3%;
     margin-right: 3%;
@@ -55,9 +74,12 @@ h1{
 input[type=text]{
     background-color: rgb(254, 254, 255, 0.5);
     border: none;
-    color: rgb(254, 254, 255, 0.5);
     border-radius: 25px;
     height: 30px;
+}
+input[type=text]::-webkit-input-placeholder{
+    font-weight: bold;
+    color: rgb(254, 254, 255, 0.5);
 }
 #inputd{
     height: 60px;
@@ -78,6 +100,10 @@ input[type=date]{
     margin-right: 3%;
     font-weight: bold;
 }
+.nivelprioridade{
+    display: flex;
+    gap: 10px;
+}
 .statuselect{
     display: flex;
     justify-content: center;
@@ -93,6 +119,18 @@ input[type=date]{
     color: #fefeff;
     font-weight:bold;
 }
+#selecttodo:hover{
+    background-color: tomato;
+    color:#fefeff;
+}
+#selectdoing:hover{
+    background-color: orange;
+    color:#fefeff;
+}
+#selectdone:hover{
+    background-color: mediumseagreen;
+    color:#fefeff;
+}
 #salvar{
     margin-top: 5%;
     width: 150px;
@@ -103,6 +141,11 @@ input[type=date]{
     border-radius: 25px;
     color: #fefeff;
     font-weight:bold;
+    margin-bottom: 5%;
+}
+#salvar:hover{
+    background-color: #fefeff;
+    color: dodgerblue;
 }
 
 #botoes{
@@ -159,12 +202,6 @@ input[type=date]{
 .nota:hover{
     background-color: rgb(219, 148, 15);
 }
-#test1{
-    background-color: tomato;
-}
-#test2{
-    background-color: mediumseagreen;
-}
 .nome{
     font-size: 25px;
     font-weight: bold;
@@ -173,6 +210,7 @@ input[type=date]{
 .descricao{
     margin-left: 20px;
     color: rgb(254, 254, 255, 0.5);
+    text-align: justify;
 }
 .botoesnota{
     display: flex;
