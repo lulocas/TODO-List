@@ -23,9 +23,34 @@
             </div>
             <div id="tarefas">
                 <div class="nota">
+                    <div class="excluir">
+                        <button class="botaoEx">Excluir</button>
+                    </div>
                     <div class="texto">
                         <p class="nome">Nome</p>
                         <p class="descricao">Descricao</p>
+                        <p class="descricao">Categoria</p>
+                        <p class="descricao">Data</p>
+                        <div class="selecionar">
+                            <p class="prioridade">Nível de prioriade:</p>
+                            <div class="nivelprioridade">
+                                <input type="radio" id="nivel1" value="1" name="prioriade">
+                                <label class="labelnota" for="nivel1">1</label>
+                                <input type="radio" id="nivel2" value="2" name="prioriade">
+                                <label class="labelnota" for="nivel1">2</label>
+                                <input type="radio" id="nivel3" value="3" name="prioriade">
+                                <label class="labelnota" for="nivel1">3</label>
+                                <input type="radio" id="nivel4" value="4" name="prioriade">
+                                <label class="labelnota" for="nivel1">4</label>
+                                <input type="radio" id="nivel5" value="5" name="prioriade">
+                                <label class="labelnota" for="nivel1">5</label>
+                            </div>
+                       </div>
+                       <div id="statusSedit" class="statuselect">
+                        <button class="botaoselect" value="1" name="status" id="selecttodo">To do</button>
+                        <button class="botaoselect" value="2" name="status" id="selectdoing">Doing</button>
+                        <button class="botaoselect" value="3" name="status" id="selectdone">Done</button>
+                    </div>
                     </div>
                 </div>
                 <div class="nota">

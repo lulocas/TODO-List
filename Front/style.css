@@ -20,7 +20,7 @@ h1{
     font-size: 80px;
     color: dodgerblue;
     margin-top: 0;
-    margin-left: 12%;
+    margin-left: 8%;
 }
 
 .container{
@@ -109,6 +109,7 @@ input[type=date]{
     justify-content: center;
     margin-top: 6%;
     gap: 20px;
+    padding-bottom: 5%;
 }
 .botaoselect{
     width: 100px;
@@ -176,10 +177,10 @@ input[type=date]{
     border-radius: 100%;
     width: 40px;
     height: 40px;
-    margin-right: 21%;
+    margin-right: 10%;
 }
 #status{
-    margin-left: 12%;
+    margin-left: 8%;
 }
 
 #tarefas{
@@ -187,12 +188,12 @@ input[type=date]{
     flex-direction: row;
     gap: 20px;
     margin-top: 3%;
-    margin-left: 12%;
+    margin-left: 8%;
     flex-wrap: wrap;
 }
 .nota{
-    width: 20%;
-    height: 200px;
+    width: 30%;
+    height: 350px;
     background-color: orange;
     border-radius: 25px;
     color: #fefeff;
@@ -205,12 +206,21 @@ input[type=date]{
 .nome{
     font-size: 25px;
     font-weight: bold;
-    margin-left: 15px;;
+    margin-left: 15px;
 }
 .descricao{
     margin-left: 20px;
     color: rgb(254, 254, 255, 0.5);
     text-align: justify;
+    font-size: smaller;
+}
+.prioridade{
+    color: rgb(254, 254, 255, 0.5);
+    text-align: justify;
+    font-size: smaller;
+}
+.labelnota{
+    color: rgb(254, 254, 255, 0.5);
 }
 .botoesnota{
     display: flex;
@@ -230,58 +240,22 @@ input[type=date]{
     background-color: rgb(219, 148, 15);
 }
 
-.editcaixa{
-    position: fixed;
-    width: 30%;
-    height: 60%;
-    background-color: tomato;
+.excluir{
     display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-    top: 20%;
-    overflow-y: auto;
-    scrollbar-width: 20px;         
-    scrollbar-color: rgb(254, 254, 255, 0.5) tomato; 
+    justify-content: end;
 }
-.salvarEx{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    padding-bottom: 5%;
-}
-.bsalvarEx{
-    margin-top: 10%;
-    width: 100px;
-    height: 25px;
+.botaoEx{
     background-color: rgb(254, 254, 255, 0.5);
+    color:#fefeff;
     border: none;
     border-radius: 25px;
-    color: #fefeff;
-    font-weight:bold;
+    width: 60px;
+    height: 30px;
+    margin-top: 8px;
+    margin-right: 8px;
+    font-weight: bolder;
 }
-.bsalvarEx:hover{
+.botaoEx:hover{
     background-color: #fefeff;
     color: dodgerblue;
-}
-.editnotas{
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 18px;
-}
-.editnotas:hover{
-    color: dodgerblue;
-    width: 100%;
-}
-.caixinha{
-    width: 100%;
-}
-.inputEscondido{
-    width: 98%;
-}
-#inputDesIdit{
-    height: 60px;
-}
-#statusSedit{
-    margin-top: 10%;
 }

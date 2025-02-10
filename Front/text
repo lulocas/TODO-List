@@ -53,4 +53,54 @@
             caixa2.appendChild(statuselect);
             var salvar = document.createElement('button');
             salvar.id="salvar";
-            caixa2.appendChild(salvar);            
+            caixa2.appendChild(salvar);     
+            
+            <div class="container">
+                <div class="editcaixa">
+                    <div id="botaoX">
+                        <button id="sair">X</button>
+                    </div>
+                    <div class="labels">
+                        <div class="caixinha">
+                            <p class="editnotas" id="pNome">Nome</p>
+                            <input type="text" class="inputEscondido" style="display: none;" placeholder="Digite...">
+                        </div>
+                        <div class="caixinha">
+                            <p class="editnotas" id="pDescricao">Descrição</p>
+                            <input id="inputDesIdit" type="text" class="inputEscondido" style="display: none;" placeholder="Digite...">
+                        </div>
+                        <div class="caixinha">
+                            <p class="editnotas" id="pCategoria">Categoria</p>
+                            <input type="text" class="inputEscondido" style="display: none;" placeholder="Digite...">
+                        </div>
+                        <div class="caixinha">
+                            <p class="editnotas" id="pData">Data</p>
+                            <input type="date" class="inputEscondido" style="display: none;" placeholder="Digite...">
+                        </div>
+                    </div> 
+                    <div class="selecionar">
+                        <p>Nível de prioriade:</p>
+                        <div class="nivelprioridade">
+                            <input type="radio" id="nivel1" value="1" name="prioriade">
+                            <label for="nivel1">1</label>
+                            <input type="radio" id="nivel2" value="2" name="prioriade">
+                            <label for="nivel1">2</label>
+                            <input type="radio" id="nivel3" value="3" name="prioriade">
+                            <label for="nivel1">3</label>
+                            <input type="radio" id="nivel4" value="4" name="prioriade">
+                            <label for="nivel1">4</label>
+                            <input type="radio" id="nivel5" value="5" name="prioriade">
+                            <label for="nivel1">5</label>
+                        </div>
+                   </div>
+                   <div id="statusSedit" class="statuselect">
+                        <button class="botaoselect" value="1" name="status" id="selecttodo">To do</button>
+                        <button class="botaoselect" value="2" name="status" id="selectdoing">Doing</button>
+                        <button class="botaoselect" value="3" name="status" id="selectdone">Done</button>
+                    </div>
+                    <div class="salvarEx">
+                        <button class="bsalvarEx">Salvar</button>
+                        <button class="bsalvarEx">Excluir</button>
+                    </div>
+                </div>
+            </div>
