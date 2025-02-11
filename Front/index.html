@@ -15,78 +15,16 @@
                 <h1>To Do</h1>
             </header>
             <div id="botoes">
-                <button id="status" class="botao">Status</button>
-                <button id="prioridade" class="botao">Prioridade</button>
+                <button id="all" class="botao">All</button>
+                <button id="listarToDo" class="botao">To Do</button>
+                <button id="listarDoing" class="botao">Doing</button>
+                <button id="listarDone" class="botao">Done</button>
                 <div id="botaoadd">
                     <button id="add" class="botao">+</button>
                 </div>
             </div>
             <div id="tarefas">
-                <div class="nota">
-                    <div class="test">
-                        <div class="excluir">
-                            <button class="botaoEx">Excluir</button>
-                            <button class="botaoEx">Editar</button>
-                        </div>
-                        <div class="texto">
-                            <div class="pEbotao">
-                                <p class="nome">Nome</p>
-                                <button class="botaoLapis">*</button>
-                            </div>
-                            <input type="text" class="inputEdit" placeholder="novo nome">
-                            <div class="pEbotao">
-                                <p class="descricao">Descricao</p>
-                                <button class="botaoLapis" id="botaoLD">*</button>
-                            </div>
-                            <textarea id="inputEditDes" class="inputEdit" placeholder="novo nome"></textarea>
-                            <div class="pEbotao">
-                                <p class="descricao">Categoria</p>
-                                <button class="botaoLapis" id="botaoLC">*</button>
-                            </div>
-                            <input type="text" class="inputEdit" placeholder="novo nome">
-                            <div class="pEbotao">
-                                <p class="descricao">Data</p>
-                                <button class="botaoLapis" id="botaoLDt">*</button>
-                            </div>
-                            <input type="date" class="inputEdit">
-                            <div class="selecionar">
-                                <p class="prioridade">Nível de prioriade:</p>
-                                <div class="nivelprioridade">
-                                    <input type="radio" id="nivel1" value="1" name="prioriade">
-                                    <label class="labelnota" for="nivel1">1</label>
-                                    <input type="radio" id="nivel2" value="2" name="prioriade">
-                                    <label class="labelnota" for="nivel1">2</label>
-                                    <input type="radio" id="nivel3" value="3" name="prioriade">
-                                    <label class="labelnota" for="nivel1">3</label>
-                                    <input type="radio" id="nivel4" value="4" name="prioriade">
-                                    <label class="labelnota" for="nivel1">4</label>
-                                    <input type="radio" id="nivel5" value="5" name="prioriade">
-                                    <label class="labelnota" for="nivel1">5</label>
-                                </div>
-                           </div>
-                           <div id="statusSedit" class="statuselect">
-                                <button class="botaoselect" value="1" name="status" id="selecttodo">To do</button>
-                                <button class="botaoselect" value="2" name="status" id="selectdoing">Doing</button>
-                                <button class="botaoselect" value="3" name="status" id="selectdone">Done</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="divSalvarEdit">
-                        <button class="botaoSalvarEdit">Salvar</button>
-                    </div>
-                </div>
-                <div class="nota">
-                    <div class="texto">
-                        <p class="nome">Nome</p>
-                        <p class="descricao">Descricao</p>
-                    </div>
-                </div>
-                <div class="nota">
-                    <div class="texto">
-                        <p class="nome">Nome</p>
-                        <p class="descricao">Descricao</p>
-                    </div>
-                </div>
+               
             </div>
         </main>
         <script src="todo.js"></script>

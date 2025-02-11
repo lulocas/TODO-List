@@ -179,9 +179,11 @@ input[type=date]{
     height: 40px;
     margin-right: 10%;
 }
-#status{
+#all{
     margin-left: 8%;
+    width: 60px;
 }
+
 
 #tarefas{
     display: flex;

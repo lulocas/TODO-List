@@ -1,12 +1,14 @@
 var adicionar = document.getElementById('add');
 var tarefasDiv = document.getElementById('tarefas');
-alert(adicionar);
 var botoes = document.getElementById('botoes');
-alert(botoes);
 var main = document.getElementsByTagName('main');
-var notas = document.getElementsByClassName('nota');
+var notas = document.querySelectorAll('.nota');
 var botaoExcluir = document.getElementsByClassName('botaoEx');
-var botaoStatus = document.getElementById('status');
+var listarToDo = document.getElementById('listarToDo');
+var listarDoing = document.getElementById('listarDoing');
+var listarDone = document.getElementById('listarDone');
+var all = document.getElementById('all');
+var aux = 0;
 
 class Tarefa{
     nome;
@@ -26,6 +28,7 @@ class Tarefa{
 }
 
 var tarefas = [];
+var notaslist = [];
 
 adicionar.onclick= function(){
 
@@ -128,6 +131,9 @@ adicionar.onclick= function(){
     salvar.textContent = 'Salvar';
 
     salvar.onclick = function(){
+
+        aux++;
+
         var nome = inputNome.value;
         var descricao = inputDescricao.value;
         var categoria = inputCategoria.value;
@@ -148,6 +154,7 @@ adicionar.onclick= function(){
 
         var nota = document.createElement('div');
         nota.classList.add("nota");
+        nota.id = "nota" + aux;
         tarefasDiv.appendChild(nota);
 
         var div2 = document.createElement('div');
@@ -333,6 +340,8 @@ adicionar.onclick= function(){
                     nota.style.backgroundColor = 'mediumseagreen';
                 }
             }
+
+            
         }
 
         botaoEx.onclick = function(){
@@ -481,6 +490,9 @@ adicionar.onclick= function(){
             
         }
 
+        notaslist.push(nota);
+        console.log(notaslist);
+
         if(caixa2.style.backgroundColor == "tomato"){
             nota.style.backgroundColor = "tomato";
             atualizarStatus(tarefa.status);
@@ -524,8 +536,52 @@ adicionar.onclick= function(){
         caixa2.style.backgroundColor = "mediumseagreen";
     }
 
+
 }
 
+listarToDo.onclick = function() {
+    for (var i = 0; i < notaslist.length; i++) {
+        console.log(notaslist[i], tarefas[i].status); 
+
+        if (tarefas[i].status !== "to do") {
+            notaslist[i].style.display = "none";
+        } else {
+            notaslist[i].style.display = "block";
+        }
+    }
+}
+
+listarDoing.onclick = function() {
+    for (var i = 0; i < notaslist.length; i++) {
+        console.log(notaslist[i], tarefas[i].status); 
+
+        if (tarefas[i].status !== "doing") {
+            notaslist[i].style.display = "none";
+        } else {
+            notaslist[i].style.display = "block";
+        }
+    }
+}
+
+listarDone.onclick = function() {
+    for (var i = 0; i < notaslist.length; i++) {
+        console.log(notaslist[i], tarefas[i].status);
+
+        if (tarefas[i].status !== "done") {
+            notaslist[i].style.display = "none";
+        } else {
+            notaslist[i].style.display = "block";
+        }
+    }
+}
+
+all.onclick = function() {
+    for (var i = 0; i < notaslist.length; i++) {
+        console.log(notaslist[i], tarefas[i].status);
+
+        notaslist[i].style.display = "block";
+    }
+}
 
 
 console.log(tarefas);
