@@ -256,7 +256,7 @@ input[type=date]{
     margin-right: 8px;
     font-weight: bolder;
 }
-.botaoEx:hover{
+.botaoEx:hover, .botaoSalvarEdit:hover{
     background-color: #fefeff;
     color: dodgerblue;
 }
@@ -273,6 +273,7 @@ input[type=date]{
     border-radius: 25px;
     width: 60px;
     height: 30px;
+    font-weight: bolder;
 }
 .divSalvarEdit{
     display: flex;
@@ -287,9 +288,31 @@ input[type=date]{
     height: 80px;
     background-color: rgb(254, 254, 255, 0.5);
     border: none;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 #inputEditDes::-webkit-input-placeholder{
     font-weight: bold;
     color: rgb(254, 254, 255, 0.5);
+}
+.pEbotao{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-content: center;
+}
+.botaoLapis{
+    width: 20px;
+    height: 20px;
+    margin-top: 9%;
+    border-radius: 100%;
+    border: none;
+    background-color: rgb(254, 254, 255, 0.5);
+    color:#fefeff;
+}
+.botaoLapis:hover{
+    background-color: #fefeff;
+    color: dodgerblue;
+}
+#botaoLD, #botaoLC, #botaoLDt{
+    margin-top: 7%;
 }

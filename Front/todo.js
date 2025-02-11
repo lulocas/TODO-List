@@ -6,6 +6,7 @@ alert(botoes);
 var main = document.getElementsByTagName('main');
 var notas = document.getElementsByClassName('nota');
 var botaoExcluir = document.getElementsByClassName('botaoEx');
+var botaoStatus = document.getElementById('status');
 
 class Tarefa{
     nome;
@@ -353,28 +354,131 @@ adicionar.onclick= function(){
             divSalvarEdit.appendChild(botaoSalvar);
             nota.style.overflow = 'auto';
 
-            pNome.style.color = 'black';
-            pDescricao.style.color = 'black';
-            pCategoria.style.color = 'black';
-            pData.style.color = 'black';
+            var divNomeBotao = document.createElement('div');
+            divNomeBotao.classList.add("pEbotao");
+            pNome.parentElement.insertBefore(divNomeBotao, pNome);
+            divNomeBotao.appendChild(pNome);
+            var botaoLapisNome = document.createElement('button');
+            botaoLapisNome.classList.add('botaoLapis');
+            botaoLapisNome.textContent = "*";
+            divNomeBotao.appendChild(botaoLapisNome);
 
-            pNome.onclick = function(){
+            var divDescricaoBotao = document.createElement('div');
+            divDescricaoBotao.classList.add("pEbotao");
+            pDescricao.parentElement.insertBefore(divDescricaoBotao, pDescricao);
+            divDescricaoBotao.appendChild(pDescricao);
+            var botaoLapisDescricao = document.createElement('button');
+            botaoLapisDescricao.classList.add('botaoLapis');
+            botaoLapisDescricao.textContent = "*";
+            botaoLapisDescricao.id ="botaoLD"
+            divDescricaoBotao.appendChild(botaoLapisDescricao);
+
+            var divCategoriaBotao = document.createElement('div');
+            divCategoriaBotao.classList.add("pEbotao");
+            pCategoria.parentElement.insertBefore(divCategoriaBotao, pCategoria);
+            divCategoriaBotao.appendChild(pCategoria);
+            var botaoLapisCategoria = document.createElement('button');
+            botaoLapisCategoria.classList.add('botaoLapis');
+            botaoLapisCategoria.textContent = "*";
+            botaoLapisCategoria.id ="botaoLC"
+            divCategoriaBotao.appendChild(botaoLapisCategoria);
+
+            var divDataBotao = document.createElement('div');
+            divDataBotao.classList.add("pEbotao");
+            pData.parentElement.insertBefore(divDataBotao, pData);
+            divDataBotao.appendChild(pData);
+            var botaoLapisData = document.createElement('button');
+            botaoLapisData.classList.add('botaoLapis');
+            botaoLapisData.textContent = "*";
+            botaoLapisData.id ="botaoLDt"
+            divDataBotao.appendChild(botaoLapisData);
+
+            botaoLapisNome.onclick = function(){
                 var inputNomeEdit = document.createElement('input');
                 inputNomeEdit.classList.add('inputEdit');
                 inputNomeEdit.placeholder = "Novo nome...";
                 inputNomeEdit.type = "text";
-                pDescricao.parentElement.insertBefore(inputNomeEdit, pDescricao);
-                tarefa.nome = inputNomeEdit.value;
+                divDescricaoBotao.parentElement.insertBefore(inputNomeEdit, divDescricaoBotao);
+                
+                inputNomeEdit.addEventListener('blur', function() {
+                    tarefa.nome = inputNomeEdit.value;
+                });
+
             }
 
-            pDescricao.onclick = function(){
+            botaoLapisDescricao.onclick = function(){
                 var inputDescricaoEdit = document.createElement('textarea');
                 inputDescricaoEdit.classList.add('inputEdit');
                 inputDescricaoEdit.placeholder = "Nova descrição...";
                 inputDescricaoEdit.id = "inputEditDes";
-                pCategoria.parentElement.insertBefore(inputDescricaoEdit, pCategoria);
-                tarefa.descricao = inputDescricaoEdit.value;
+                divCategoriaBotao.parentElement.insertBefore(inputDescricaoEdit, divCategoriaBotao);
+                
+                inputDescricaoEdit.addEventListener('blur', function() {
+                    tarefa.descricao = inputDescricaoEdit.value;
+                });
+
             }
+
+            botaoLapisCategoria.onclick = function(){
+                var inputCategoriaEdit = document.createElement('input');
+                inputCategoriaEdit.classList.add('inputEdit');
+                inputCategoriaEdit.placeholder = "Nova categoria...";
+                inputCategoriaEdit.type = "text";
+                divDataBotao.parentElement.insertBefore(inputCategoriaEdit, divDataBotao);
+                
+                inputCategoriaEdit.addEventListener('blur', function() {
+                    tarefa.categoria = inputCategoriaEdit.value;
+                });
+
+            }
+
+            botaoLapisData.onclick = function(){
+                var inputDateEdit = document.createElement('input');
+                inputDateEdit.classList.add('inputEdit');
+                inputDateEdit.type = "date";
+                selecionar.parentElement.insertBefore(inputDateEdit, selecionar);
+                
+                inputDateEdit.addEventListener('blur', function() {
+                    var newdata = new Date(inputDateEdit.value);
+                    tarefa.data = newdata
+                });
+
+            }
+
+            botaoSalvar.onclick = function(){
+                pNome.textContent = tarefa.nome;
+                pDescricao.textContent = tarefa.descricao;
+                pCategoria.textContent = tarefa.categoria;
+                pData.textContent = tarefa.data.toLocaleDateString('pt-BR', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit'
+                });
+                
+                selecionar.parentElement.insertBefore(pNome, selecionar);
+                selecionar.parentElement.insertBefore(pDescricao, selecionar);
+                selecionar.parentElement.insertBefore(pCategoria, selecionar);
+                selecionar.parentElement.insertBefore(pData, selecionar);
+
+                document.querySelectorAll('.pEbotao').forEach(function(div) {
+                    div.remove();
+                });
+            
+                // Remover todos os botões com a classe 'botaoLapis' dentro das divs com a classe 'pEbotao'
+                document.querySelectorAll('.pEbotao .botaoLapis').forEach(function(button) {
+                    button.remove();
+                });
+            
+                // Remover todos os inputs com a classe 'inputEdit'
+                document.querySelectorAll('.inputEdit').forEach(function(input) {
+                    input.remove();
+                });
+
+                divSalvarEdit.remove();
+                botaoSalvar.remove();
+
+            }
+            
         }
 
         if(caixa2.style.backgroundColor == "tomato"){
@@ -422,5 +526,6 @@ adicionar.onclick= function(){
 
 }
 
-console.log(tarefas);
 
+
+console.log(tarefas);
