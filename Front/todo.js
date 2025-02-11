@@ -149,17 +149,25 @@ adicionar.onclick= function(){
         nota.classList.add("nota");
         tarefasDiv.appendChild(nota);
 
+        var div2 = document.createElement('div');
+        div2.classList.add('test');
+        nota.appendChild(div2);
+
         var divExcluir = document.createElement('div');
         divExcluir.classList.add('excluir');
-        nota.appendChild(divExcluir);
+        div2.appendChild(divExcluir);
         var botaoEx = document.createElement('button');
         botaoEx.classList.add("botaoEx");
         botaoEx.textContent = "Excluir";
         divExcluir.appendChild(botaoEx); 
+        var botaoEd = document.createElement('button');
+        botaoEd.classList.add('botaoEx');
+        botaoEd.textContent = "Editar";
+        divExcluir.appendChild(botaoEd);
 
         var texto = document.createElement('div');
         texto.classList.add("texto");
-        nota.appendChild(texto);
+        div2.appendChild(texto);
         
         var pNome = document.createElement('p');
         pNome.classList.add("nome");
@@ -262,6 +270,7 @@ adicionar.onclick= function(){
         // Ciração da div dos botoes
         var statuselect = document.createElement('div');
         statuselect.classList.add("statuselect");
+        statuselect.id = 'statusSedit';
         texto.appendChild(statuselect);
         // Ciração dos botoes
         var botaoToDo = document.createElement('button');
@@ -282,19 +291,101 @@ adicionar.onclick= function(){
         botaoDone.textContent = "Done";
         statuselect.appendChild(botaoDone);
 
-        
+        botaoDone.onclick = function(){
+            nota.style.backgroundColor = 'mediumseagreen';
+            tarefa.status = 'done';
+            atualizarStatus(tarefa.status);
+        }
+
+        botaoDoing.onclick = function(){
+            nota.style.backgroundColor = 'orange';
+            tarefa.status = 'doing';
+            atualizarStatus(tarefa.status);
+        }
+
+        botaoToDo.onclick = function(){
+            nota.style.backgroundColor = 'tomato';
+            tarefa.status = 'to do';
+            atualizarStatus(tarefa.status);
+        }
+
+        function atualizarStatus(status){
+            if(tarefa.status == 'to do'){
+                nota.onmouseover = function(){
+                    nota.style.backgroundColor = 'rgb(228, 87, 63)';
+                }
+                nota.onmouseout = function(){
+                    nota.style.backgroundColor = 'tomato';
+                }
+            }else if(tarefa.status == 'doing'){
+                nota.onmouseover = function(){
+                    nota.style.backgroundColor = 'rgb(219, 148, 15)';
+                }
+                nota.onmouseout = function(){
+                    nota.style.backgroundColor = 'orange';
+                }
+            }else if(tarefa.status == 'done'){
+                nota.onmouseover = function(){
+                    nota.style.backgroundColor = 'rgb(54, 151, 98)';
+                }
+                nota.onmouseout = function(){
+                    nota.style.backgroundColor = 'mediumseagreen';
+                }
+            }
+        }
+
         botaoEx.onclick = function(){
             nota.remove();
-            tarefas.splice(tarefa);
+            var index = tarefas.indexOf(tarefa);
+            if (index !== -1) {
+                tarefas.splice(index, 1);
+            }
         }
         console.log(tarefas);
 
+        botaoEd.onclick = function(){
+            var divSalvarEdit = document.createElement('div');
+            divSalvarEdit.classList.add('divSalvarEdit');
+            nota.appendChild(divSalvarEdit);
+            var botaoSalvar = document.createElement('button');
+            botaoSalvar.classList.add('botaoSalvarEdit');
+            botaoSalvar.textContent = 'Salvar';
+            divSalvarEdit.appendChild(botaoSalvar);
+            nota.style.overflow = 'auto';
+
+            pNome.style.color = 'black';
+            pDescricao.style.color = 'black';
+            pCategoria.style.color = 'black';
+            pData.style.color = 'black';
+
+            pNome.onclick = function(){
+                var inputNomeEdit = document.createElement('input');
+                inputNomeEdit.classList.add('inputEdit');
+                inputNomeEdit.placeholder = "Novo nome...";
+                inputNomeEdit.type = "text";
+                pDescricao.parentElement.insertBefore(inputNomeEdit, pDescricao);
+                tarefa.nome = inputNomeEdit.value;
+            }
+
+            pDescricao.onclick = function(){
+                var inputDescricaoEdit = document.createElement('textarea');
+                inputDescricaoEdit.classList.add('inputEdit');
+                inputDescricaoEdit.placeholder = "Nova descrição...";
+                inputDescricaoEdit.id = "inputEditDes";
+                pCategoria.parentElement.insertBefore(inputDescricaoEdit, pCategoria);
+                tarefa.descricao = inputDescricaoEdit.value;
+            }
+        }
+
         if(caixa2.style.backgroundColor == "tomato"){
             nota.style.backgroundColor = "tomato";
+            atualizarStatus(tarefa.status);
         }else if(caixa2.style.backgroundColor == "orange"){
             nota.style.backgroundColor = "orange";
+            atualizarStatus(tarefa.status);
         }else if(caixa2.style.backgroundColor == "mediumseagreen"){
             nota.style.backgroundColor = "mediumseagreen";
+            atualizarStatus(tarefa.status);
         }
 
         caixa2 = document.querySelector('.caixa');

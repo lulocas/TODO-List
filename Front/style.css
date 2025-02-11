@@ -191,17 +191,29 @@ input[type=date]{
     margin-left: 8%;
     flex-wrap: wrap;
 }
+.test{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+}
 .nota{
     width: 30%;
-    height: 350px;
-    background-color: orange;
+    height: 360px;
+    background-color: mediumseagreen;
     border-radius: 25px;
     color: #fefeff;
     flex-direction: row;
     cursor: pointer;
+    overflow: auto;
 }
 .nota:hover{
-    background-color: rgb(219, 148, 15);
+    background-color: rgb(54, 151, 98);
+}
+.texto{
+    display: block;
+    margin-top: 0;
+    margin-right: 5%;
+    width: 100%;
 }
 .nome{
     font-size: 25px;
@@ -212,7 +224,7 @@ input[type=date]{
     margin-left: 20px;
     color: rgb(254, 254, 255, 0.5);
     text-align: justify;
-    font-size: smaller;
+    font-size: 20px;
 }
 .prioridade{
     color: rgb(254, 254, 255, 0.5);
@@ -227,17 +239,6 @@ input[type=date]{
     margin-top: 17%;
     justify-content: center;
     gap: 10px;
-}
-.statusb{
-    width: 90px;
-    color: rgb(254, 254, 255, 0.5);
-    background-color: rgb(255, 165, 0, 0.5);
-    border: 1px solid rgb(254, 254, 255, 0.5);
-    border-radius: 25px;
-    cursor: pointer;
-}
-.statusb:hover{
-    background-color: rgb(219, 148, 15);
 }
 
 .excluir{
@@ -258,4 +259,37 @@ input[type=date]{
 .botaoEx:hover{
     background-color: #fefeff;
     color: dodgerblue;
+}
+#statusSedit{
+    display: flex;
+    justify-content: center;
+    margin-left: 40%;
+}
+
+.botaoSalvarEdit{
+    background-color: rgb(254, 254, 255, 0.5);
+    color:#fefeff;
+    border: none;
+    border-radius: 25px;
+    width: 60px;
+    height: 30px;
+}
+.divSalvarEdit{
+    display: flex;
+    margin-left: 80%;
+    margin-bottom: 5%;
+}
+
+.inputEdit{
+    margin-left: 5%;
+}
+#inputEditDes{
+    height: 80px;
+    background-color: rgb(254, 254, 255, 0.5);
+    border: none;
+    border-radius: 25px;
+}
+#inputEditDes::-webkit-input-placeholder{
+    font-weight: bold;
+    color: rgb(254, 254, 255, 0.5);
 }

@@ -104,3 +104,59 @@
                     </div>
                 </div>
             </div>
+
+            .editcaixa{
+                position: fixed;
+                width: 30%;
+                height: 60%;
+                background-color: tomato;
+                display: flex;
+                flex-direction: column;
+                border-radius: 25px;
+                top: 20%;
+                overflow-y: auto;
+                scrollbar-width: 20px;         
+                scrollbar-color: rgb(254, 254, 255, 0.5) tomato; 
+            }
+            .salvarEx{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+                padding-bottom: 5%;
+            }
+            .bsalvarEx{
+                margin-top: 10%;
+                width: 100px;
+                height: 25px;
+                background-color: rgb(254, 254, 255, 0.5);
+                border: none;
+                border-radius: 25px;
+                color: #fefeff;
+                font-weight:bold;
+            }
+            .bsalvarEx:hover{
+                background-color: #fefeff;
+                color: dodgerblue;
+            }
+            .editnotas{
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 18px;
+            }
+            .editnotas:hover{
+                color: dodgerblue;
+                width: 100%;
+            }
+            .caixinha{
+                width: 100%;
+            }
+            .inputEscondido{
+                width: 98%;
+            }
+            #inputDesIdit{
+                height: 60px;
+            }
+            #statusSedit{
+                margin-top: 10%;
+            }
