@@ -340,8 +340,27 @@ adicionar.onclick= function(){
                     nota.style.backgroundColor = 'mediumseagreen';
                 }
             }
-
+                                                                                                                                                                                                                                                                                                                                                                                                            
             
+        }
+        inputR1.addEventListener('change', function() { atualizarPrioridade(); });
+        inputR2.addEventListener('change', function() { atualizarPrioridade(); });
+        inputR3.addEventListener('change', function() { atualizarPrioridade(); });
+        inputR4.addEventListener('change', function() { atualizarPrioridade(); });
+        inputR5.addEventListener('change', function() { atualizarPrioridade(); });
+
+        function atualizarPrioridade(prioridade){
+            if(inputR1.checked){
+                tarefa.prioridade = 1;
+            }else if(inputR2.checked){
+                tarefa.prioridade = 2;                                                                                                                                                                                                                                                              
+            }else if(inputR3.checked){
+                tarefa.prioridade = 3;
+            }else if(inputR4.checked){
+                tarefa.prioridade = 4;
+            }else if(inputR5.checked){                                                                                                                                                                                                                                                                              
+                tarefa.prioridade = 5;
+            }
         }
 
         botaoEx.onclick = function(){
@@ -473,12 +492,12 @@ adicionar.onclick= function(){
                     div.remove();
                 });
             
-                // Remover todos os botões com a classe 'botaoLapis' dentro das divs com a classe 'pEbotao'
+                
                 document.querySelectorAll('.pEbotao .botaoLapis').forEach(function(button) {
                     button.remove();
                 });
             
-                // Remover todos os inputs com a classe 'inputEdit'
+                
                 document.querySelectorAll('.inputEdit').forEach(function(input) {
                     input.remove();
                 });
