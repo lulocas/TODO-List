@@ -560,45 +560,58 @@ adicionar.onclick= function(){
 
 listarToDo.onclick = function() {
     for (var i = 0; i < notaslist.length; i++) {
-        console.log(notaslist[i], tarefas[i].status); 
+        console.log(notaslist[i], tarefas[i]?.status); // Verifica se tarefas[i] existe antes de acessar
 
-        if (tarefas[i].status !== "to do") {
-            notaslist[i].style.display = "none";
+        if (tarefas[i]?.status !== "to do") {
+            if (notaslist[i]) {
+                notaslist[i].style.display = "none"; // Esconde a nota se o status não for "to do"
+            }
         } else {
-            notaslist[i].style.display = "block";
+            if (notaslist[i]) {
+                notaslist[i].style.display = "block"; // Mostra a nota se o status for "to do"
+            }
         }
     }
 }
 
 listarDoing.onclick = function() {
     for (var i = 0; i < notaslist.length; i++) {
-        console.log(notaslist[i], tarefas[i].status); 
+        console.log(notaslist[i], tarefas[i]?.status); 
 
-        if (tarefas[i].status !== "doing") {
-            notaslist[i].style.display = "none";
+        if (tarefas[i]?.status !== "doing") {
+            if (notaslist[i]) {
+                notaslist[i].style.display = "none"; 
+            }
         } else {
-            notaslist[i].style.display = "block";
+            if (notaslist[i]) {
+                notaslist[i].style.display = "block"; 
+            }
         }
     }
 }
 
 listarDone.onclick = function() {
     for (var i = 0; i < notaslist.length; i++) {
-        console.log(notaslist[i], tarefas[i].status);
+        console.log(notaslist[i], tarefas[i]?.status); 
 
-        if (tarefas[i].status !== "done") {
-            notaslist[i].style.display = "none";
+        if (tarefas[i]?.status !== "done") {
+            if (notaslist[i]) {
+                notaslist[i].style.display = "none";
+            }
         } else {
-            notaslist[i].style.display = "block";
+            if (notaslist[i]) {
+                notaslist[i].style.display = "block"; 
+            }
         }
     }
 }
 
 all.onclick = function() {
     for (var i = 0; i < notaslist.length; i++) {
-        console.log(notaslist[i], tarefas[i].status);
-
-        notaslist[i].style.display = "block";
+        console.log(notaslist[i], tarefas[i]?.status); 
+        if (notaslist[i]) {
+            notaslist[i].style.display = "block"; 
+        }
     }
 }
 
